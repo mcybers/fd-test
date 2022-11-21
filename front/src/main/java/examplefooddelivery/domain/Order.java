@@ -40,12 +40,6 @@ public class Order  {
     
     
     
-    private String preference;
-    
-    
-    
-    
-    
     private String options;
     
     

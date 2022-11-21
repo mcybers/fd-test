@@ -36,12 +36,6 @@ public class StoreOrder  {
     
     
     
-    private String preference;
-    
-    
-    
-    
-    
     private Long orderId;
     
     

@@ -12,9 +12,6 @@
                 <String label="CustomerId" v-model="item.customerId" :editMode="editMode" @change="change" />
             </div>
             <div>
-                <String label="Preference" v-model="item.preference" :editMode="editMode" @change="change" />
-            </div>
-            <div>
                 <String label="Options" v-model="item.options" :editMode="editMode" @change="change" />
             </div>
             <div>
