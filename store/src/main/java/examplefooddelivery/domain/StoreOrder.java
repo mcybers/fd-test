@@ -132,6 +132,27 @@ public class StoreOrder  {
 
         
     }
+    public static void copyOrder(OrderPlaced orderPlaced){
+
+        /** Example 1:  new item 
+        StoreOrder storeOrder = new StoreOrder();
+        repository().save(storeOrder);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(orderPlaced.get???()).ifPresent(storeOrder->{
+            
+            storeOrder // do something
+            repository().save(storeOrder);
+
+
+         });
+        */
+
+        
+    }
 
 
 }
