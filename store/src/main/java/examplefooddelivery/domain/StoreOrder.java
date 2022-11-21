@@ -134,6 +134,11 @@ public class StoreOrder  {
     }
     public static void copyOrder(OrderPlaced orderPlaced){
 
+        StoreOrder storeOrder = new StoreOrder();
+        storeOrder.setOrderId(orderPlaced.getId());
+        storeOrder.setFoodId(orderPlaced.getFoodId());
+        storeOrder.setStatus(orderPlaced.getStatus());
+        repository().save(storeOrder);
         /** Example 1:  new item 
         StoreOrder storeOrder = new StoreOrder();
         repository().save(storeOrder);

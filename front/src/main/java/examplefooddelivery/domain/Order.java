@@ -37,18 +37,11 @@ public class Order  {
     private String customerId;
     
     
-    
-    
-    
-    private String preference;
-    
-    
-    
-    
+
     
     private String options;
     
-    
+
     
     
     
@@ -69,6 +62,7 @@ public class Order  {
 
         examplefooddelivery.external.Payment payment = new examplefooddelivery.external.Payment();
         // mappings goes here
+        payment.setOrderId(id);
         FrontApplication.applicationContext.getBean(examplefooddelivery.external.PaymentService.class)
             .pay(payment);
 
@@ -77,6 +71,7 @@ public class Order  {
         orderPlaced.publishAfterCommit();
 
     }
+
     @PostRemove
     public void onPostRemove(){
 

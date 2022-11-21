@@ -41,7 +41,7 @@ logging:
 
 api:
   url:
-    front: front:8081
+    front: localhost:8081
 
 
 server:
