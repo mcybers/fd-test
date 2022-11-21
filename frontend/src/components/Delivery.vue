@@ -205,10 +205,29 @@
             change(){
                 this.$emit('input', this.value);
             },
+            async pick() {
+                try {
+                    if(!this.offline) {
+                        var temp = await axios.put(axios.fixUrl(this.value._links['pick'].href))
+                        for(var k in temp.data) {
+                            this.value[k]=temp.data[k];
+                        }
+                    }
+
+                    this.editMode = false;
+                } catch(e) {
+                    this.snackbar.status = true
+                    if(e.response && e.response.data.message) {
+                        this.snackbar.text = e.response.data.message
+                    } else {
+                        this.snackbar.text = e
+                    }
+                }
+            },
             async confirmDelivered() {
                 try {
                     if(!this.offline) {
-                        var temp = await axios.put(axios.fixUrl(this.value._links['delivery confirm'].href))
+                        var temp = await axios.put(axios.fixUrl(this.value._links['confirm'].href))
                         for(var k in temp.data) {
                             this.value[k]=temp.data[k];
                         }
