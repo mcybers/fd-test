@@ -13,7 +13,7 @@ public class TopFood {
         @Id
         //@GeneratedValue(strategy=GenerationType.AUTO)
         private Long id;
-        private String foodId;
+        private Long foodId;
         private Long count;
 
 
