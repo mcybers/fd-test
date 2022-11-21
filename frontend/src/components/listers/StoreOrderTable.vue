@@ -70,6 +70,7 @@
                     { text: "foodId", value: "foodId" },
                     { text: "orderId", value: "orderId" },
                     { text: "status", value: "status" },
+                    { text: "address", value: "address" },
                 ],
             storeOrder : [],
             newValue: {},
@@ -90,6 +91,7 @@
                 'foodId': '',
                 'orderId': 0,
                 'status': '',
+                'address': '',
             }
         },
         methods: {

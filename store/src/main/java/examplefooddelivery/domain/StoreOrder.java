@@ -43,6 +43,12 @@ public class StoreOrder  {
     
     
     private String status;
+    
+    
+    
+    
+    
+    private String address;
 
     @PostPersist
     public void onPostPersist(){
