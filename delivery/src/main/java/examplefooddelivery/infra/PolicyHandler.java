@@ -47,23 +47,6 @@ public class PolicyHandler{
 
     }
 
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='OrderPlaced'")
-    public void wheneverOrderPlaced_CopyOrder(@Payload OrderPlaced orderPlaced){
-
-        OrderPlaced event = orderPlaced;
-        System.out.println("\n\n##### listener CopyOrder : " + orderPlaced + "\n\n");
-
-
-        
-
-        // Sample Logic //
-        Delivery.copyOrder(event);
-        
-
-        
-
-    }
-
 }
 
 
