@@ -36,12 +36,6 @@ public class StoreOrder  {
     
     
     
-    private String preference;
-    
-    
-    
-    
-    
     private Long orderId;
     
     
@@ -139,6 +133,7 @@ public class StoreOrder  {
         storeOrder.setFoodId(orderPlaced.getFoodId());
         storeOrder.setStatus(orderPlaced.getStatus());
         repository().save(storeOrder);
+        
         /** Example 1:  new item 
         StoreOrder storeOrder = new StoreOrder();
         repository().save(storeOrder);
