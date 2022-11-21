@@ -48,43 +48,18 @@ public class Payment  {
 
     public static void cancelPayment(Rejected rejected){
 
-        /** Example 1:  new item 
-        Payment payment = new Payment();
-        repository().save(payment);
-
-        */
-
-        /** Example 2:  finding and process
         
-        repository().findById(rejected.get???()).ifPresent(payment->{
-            
-            payment // do something
-            repository().save(payment);
-
-
+        repository().findByOrderId(rejected.getOrderId()).ifPresent(payment->{
+            repository().delete(payment);
          });
-        */
 
         
     }
     public static void cancelPayment(OrderCanceled orderCanceled){
 
-        /** Example 1:  new item 
-        Payment payment = new Payment();
-        repository().save(payment);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderCanceled.get???()).ifPresent(payment->{
-            
-            payment // do something
-            repository().save(payment);
-
-
+        repository().findByOrderId(orderCanceled.getId()).ifPresent(payment->{
+            repository().delete(payment);
          });
-        */
 
         
     }

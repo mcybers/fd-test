@@ -55,15 +55,6 @@ public class Order  {
     @PostPersist
     public void onPostPersist(){
 
-        //Following code causes dependency to external APIs
-        // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
-
-
-        examplefooddelivery.external.Payment payment = new examplefooddelivery.external.Payment();
-        // mappings goes here
-        payment.setOrderId(id);
-        FrontApplication.applicationContext.getBean(examplefooddelivery.external.PaymentService.class)
-            .pay(payment);
 
 
         OrderPlaced orderPlaced = new OrderPlaced(this);
@@ -95,65 +86,36 @@ public class Order  {
 
 
     public static void cancel(Rejected rejected){
-
-        /** Example 1:  new item 
-        Order order = new Order();
-        repository().save(order);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(rejected.get???()).ifPresent(order->{
+        repository().findById(rejected.getOrderId()).ifPresent(order->{
             
-            order // do something
+            order.setStatus("주문 취소"); // do something
             repository().save(order);
 
 
          });
-        */
-
         
     }
     public static void updateStatus(Accepted accepted){
 
-        /** Example 1:  new item 
-        Order order = new Order();
-        repository().save(order);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(accepted.get???()).ifPresent(order->{
+        repository().findById(accepted.getOrderId()).ifPresent(order->{
             
-            order // do something
+            order.setStatus("주문 수락"); // do something
             repository().save(order);
 
 
          });
-        */
 
         
     }
     public static void updateStatus(Rejected rejected){
 
-        /** Example 1:  new item 
-        Order order = new Order();
-        repository().save(order);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(rejected.get???()).ifPresent(order->{
+        repository().findById(rejected.getOrderId()).ifPresent(order->{
             
-            order // do something
+            order.setStatus("주문 거절"); // do something
             repository().save(order);
 
 
          });
-        */
 
         
     }

@@ -25,12 +25,13 @@ public class StoreOrderController {
         produces = "application/json;charset=UTF-8")
     public StoreOrder finishCook(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
             System.out.println("##### /storeOrder/finishCook  called #####");
-            Optional<StoreOrder> optionalStoreOrder = storeOrderRepository.findById(id);
+            Optional<StoreOrder> optionalStoreOrder = storeOrderRepository.findByOrderId(id);
             
             optionalStoreOrder.orElseThrow(()-> new Exception("No Entity Found"));
             StoreOrder storeOrder = optionalStoreOrder.get();
-            storeOrder.finishCook();
-            
+            storeOrder.finishCook();            
+
+
             storeOrderRepository.save(storeOrder);
             return storeOrder;
             
@@ -44,7 +45,7 @@ public class StoreOrderController {
         produces = "application/json;charset=UTF-8")
     public StoreOrder accept(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
             System.out.println("##### /storeOrder/accept  called #####");
-            Optional<StoreOrder> optionalStoreOrder = storeOrderRepository.findById(id);
+            Optional<StoreOrder> optionalStoreOrder = storeOrderRepository.findByOrderId(id);
             
             optionalStoreOrder.orElseThrow(()-> new Exception("No Entity Found"));
             StoreOrder storeOrder = optionalStoreOrder.get();
@@ -63,7 +64,7 @@ public class StoreOrderController {
         produces = "application/json;charset=UTF-8")
     public StoreOrder reject(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
             System.out.println("##### /storeOrder/reject  called #####");
-            Optional<StoreOrder> optionalStoreOrder = storeOrderRepository.findById(id);
+            Optional<StoreOrder> optionalStoreOrder = storeOrderRepository.findByOrderId(id);
             
             optionalStoreOrder.orElseThrow(()-> new Exception("No Entity Found"));
             StoreOrder storeOrder = optionalStoreOrder.get();
@@ -82,7 +83,7 @@ public class StoreOrderController {
         produces = "application/json;charset=UTF-8")
     public StoreOrder startCook(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
             System.out.println("##### /storeOrder/startCook  called #####");
-            Optional<StoreOrder> optionalStoreOrder = storeOrderRepository.findById(id);
+            Optional<StoreOrder> optionalStoreOrder = storeOrderRepository.findByOrderId(id);
             
             optionalStoreOrder.orElseThrow(()-> new Exception("No Entity Found"));
             StoreOrder storeOrder = optionalStoreOrder.get();

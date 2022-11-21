@@ -60,44 +60,10 @@ public class Delivery  {
 
     public static void addDeliveryList(CookFinished cookFinished){
 
-        /** Example 1:  new item 
         Delivery delivery = new Delivery();
+        delivery.setAddress(cookFinished.getAddress());
+        delivery.setOrderId(cookFinished.getOrderId());
         repository().save(delivery);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(cookFinished.get???()).ifPresent(delivery->{
-            
-            delivery // do something
-            repository().save(delivery);
-
-
-         });
-        */
-
-        
-    }
-    public static void copyOrder(OrderPlaced orderPlaced){
-
-        /** Example 1:  new item 
-        Delivery delivery = new Delivery();
-        repository().save(delivery);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderPlaced.get???()).ifPresent(delivery->{
-            
-            delivery // do something
-            repository().save(delivery);
-
-
-         });
-        */
-
         
     }
 

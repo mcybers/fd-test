@@ -82,53 +82,47 @@ public class StoreOrder  {
 
 
     public void finishCook(){
+        this.setStatus("요리 완료");
+        CookFinished cookFinished = new CookFinished(this);
+        
+        cookFinished.publishAfterCommit();
+        
     }
     public void accept(){
+        this.setStatus("주문 승락");
+        Accepted accepted = new Accepted(this);
+        accepted.publishAfterCommit();
     }
     public void reject(){
+        this.setStatus("주문 거절");
+        Rejected rejected = new Rejected(this);
+        rejected.publishAfterCommit();
     }
     public void startCook(){
+        this.setStatus("요리 시작");
+        CookStarted cookStarted = new CookStarted(this);
+        cookStarted.publishAfterCommit();
     }
 
     public static void addOrderList(Paid paid){
 
-        /** Example 1:  new item 
-        StoreOrder storeOrder = new StoreOrder();
-        repository().save(storeOrder);
-
-        */
-
-        /** Example 2:  finding and process
         
-        repository().findById(paid.get???()).ifPresent(storeOrder->{
+        repository().findByOrderId(paid.getOrderId()).ifPresent(storeOrder->{
             
-            storeOrder // do something
+            storeOrder.setStatus("주문 완료");
             repository().save(storeOrder);
 
-
          });
-        */
-
         
     }
     public static void alramCancel(OrderCanceled orderCanceled){
 
-        /** Example 1:  new item 
-        StoreOrder storeOrder = new StoreOrder();
-        repository().save(storeOrder);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderCanceled.get???()).ifPresent(storeOrder->{
+      
+        repository().findById(orderCanceled.getId()).ifPresent(storeOrder->{
             
-            storeOrder // do something
+            storeOrder.setStatus("주문취소");
             repository().save(storeOrder);
-
-
          });
-        */
 
         
     }
@@ -137,25 +131,9 @@ public class StoreOrder  {
         StoreOrder storeOrder = new StoreOrder();
         storeOrder.setOrderId(orderPlaced.getId());
         storeOrder.setFoodId(orderPlaced.getFoodId());
-        storeOrder.setStatus(orderPlaced.getStatus());
+        storeOrder.setAddress(orderPlaced.getAddress());
+        storeOrder.setStatus("결제 중");
         repository().save(storeOrder);
-        
-        /** Example 1:  new item 
-        StoreOrder storeOrder = new StoreOrder();
-        repository().save(storeOrder);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderPlaced.get???()).ifPresent(storeOrder->{
-            
-            storeOrder // do something
-            repository().save(storeOrder);
-
-
-         });
-        */
 
         
     }
