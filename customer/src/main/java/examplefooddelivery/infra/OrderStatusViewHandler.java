@@ -99,6 +99,66 @@ public class OrderStatusViewHandler {
             e.printStackTrace();
         }
     }
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenCookFinished_then_UPDATE_4(@Payload CookFinished cookFinished) {
+        try {
+            if (!cookFinished.validate()) return;
+                // view 객체 조회
+            Optional<OrderStatus> orderStatusOptional = orderStatusRepository.findById(cookFinished.getOrderId());
+
+            if( orderStatusOptional.isPresent()) {
+                 OrderStatus orderStatus = orderStatusOptional.get();
+            // view 객체에 이벤트의 eventDirectValue 를 set 함
+                orderStatus.setStatus("요리 완료");    
+                // view 레파지 토리에 save
+                 orderStatusRepository.save(orderStatus);
+                }
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenCookStarted_then_UPDATE_5(@Payload CookStarted cookStarted) {
+        try {
+            if (!cookStarted.validate()) return;
+                // view 객체 조회
+            Optional<OrderStatus> orderStatusOptional = orderStatusRepository.findById(cookStarted.getOrderId());
+
+            if( orderStatusOptional.isPresent()) {
+                 OrderStatus orderStatus = orderStatusOptional.get();
+            // view 객체에 이벤트의 eventDirectValue 를 set 함
+                orderStatus.setStatus("요리 시작");    
+                // view 레파지 토리에 save
+                 orderStatusRepository.save(orderStatus);
+                }
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenDelivered_then_UPDATE_6(@Payload Delivered delivered) {
+        try {
+            if (!delivered.validate()) return;
+                // view 객체 조회
+            Optional<OrderStatus> orderStatusOptional = orderStatusRepository.findById(delivered.getOrderId());
+
+            if( orderStatusOptional.isPresent()) {
+                 OrderStatus orderStatus = orderStatusOptional.get();
+            // view 객체에 이벤트의 eventDirectValue 를 set 함
+                orderStatus.setStatus("배달완료");    
+                // view 레파지 토리에 save
+                 orderStatusRepository.save(orderStatus);
+                }
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 }
 
