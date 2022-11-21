@@ -61,8 +61,12 @@ public class Delivery  {
 
 
     public void pick(){
+        DeliveryStarted deliveryStarted = new DeliveryStarted(this);
+        deliveryStarted.publishAfterCommit();
     }
     public void confirmDelivered(){
+        Delivered delivered = new Delivered(this);
+        delivered.publishAfterCommit();
     }
 
     public static void addDeliveryList(CookFinished cookFinished){

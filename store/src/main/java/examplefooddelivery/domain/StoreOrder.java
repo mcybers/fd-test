@@ -53,25 +53,6 @@ public class StoreOrder  {
     @PostPersist
     public void onPostPersist(){
 
-
-        CookFinished cookFinished = new CookFinished(this);
-        cookFinished.publishAfterCommit();
-
-
-
-        Accepted accepted = new Accepted(this);
-        accepted.publishAfterCommit();
-
-
-
-        Rejected rejected = new Rejected(this);
-        rejected.publishAfterCommit();
-
-
-
-        CookStarted cookStarted = new CookStarted(this);
-        cookStarted.publishAfterCommit();
-
     }
 
     public static StoreOrderRepository repository(){
@@ -105,7 +86,6 @@ public class StoreOrder  {
     }
 
     public static void addOrderList(Paid paid){
-
         
         repository().findByOrderId(paid.getOrderId()).ifPresent(storeOrder->{
             
