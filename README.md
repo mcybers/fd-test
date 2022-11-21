@@ -278,6 +278,7 @@ public class 결제이력 {
 - Entity Pattern 과 Repository Pattern 을 적용하여 JPA 를 통하여 다양한 데이터소스 유형 (RDB or NoSQL) 에 대한 별도의 처리가 없도록 데이터 접근 어댑터를 자동 생성하기 위하여 Spring Data REST 의 RestRepository 를 적용하였다
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 package fooddelivery;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
@@ -286,6 +287,9 @@ public interface 결제이력Repository extends PagingAndSortingRepository<결�
 }
 =======
  http :8088/storeOrders id="id" foodId="foodId" orderId="orderId" status="status" 
+>>>>>>> origin/template
+=======
+ http :8088/storeOrders id="id" foodId="foodId" orderId="orderId" status="status" address="address" 
 >>>>>>> origin/template
 ```
 - 적용 후 REST API 의 테스트

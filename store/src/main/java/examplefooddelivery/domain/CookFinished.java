@@ -13,6 +13,7 @@ public class CookFinished extends AbstractEvent {
     private String foodId;
     private Long orderId;
     private String status;
+    private String address;
 
     public CookFinished(StoreOrder aggregate){
         super(aggregate);
