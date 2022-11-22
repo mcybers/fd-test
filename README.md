@@ -57,8 +57,11 @@
 
 [CQRS]
 
+[주문 상태 확인]
 ![image](https://user-images.githubusercontent.com/16378278/203234918-0c5d4411-e52c-49cf-9f77-7e6586f126ea.png)
-![image](https://user-images.githubusercontent.com/16378278/203234974-ecdffec1-92c7-4da2-9779-13bf957e27bc.png)
+[음식 주문 개수 확인]
+![image](https://user-images.githubusercontent.com/16378278/203235591-9dc332ed-79d2-4e65-a6dc-7f71d0b9672a.png)
+
 
 # 체크포인트
 
