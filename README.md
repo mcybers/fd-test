@@ -96,8 +96,6 @@
 [Circuit Breaker & Fallback]
 
 ![image](https://user-images.githubusercontent.com/16378278/203221063-35d97281-5838-4d8e-aaab-4cc46359fccc.png)
-![image](https://user-images.githubusercontent.com/16378278/203229938-6ff7305c-1add-4877-afd8-840f0ce0bc6e.png)
-![image](https://user-images.githubusercontent.com/16378278/203230063-274afd6a-0296-40a4-9bdc-c4e5dd341d2f.png)
 
 
 
