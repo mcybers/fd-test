@@ -6,6 +6,16 @@
 ![이벤트스토밍](https://user-images.githubusercontent.com/16378278/203219614-1060fe60-263d-4fba-9f55-d2a6b88bf1ac.PNG)
 
 
+[새로운 기능]
+1. 사고 시 주문 취소
+![image](https://user-images.githubusercontent.com/16378278/203236196-a879274d-e011-4fc3-867e-44efffacd210.png)
+![image](https://user-images.githubusercontent.com/16378278/203236234-e3100a21-e1f3-4bfb-a53f-081ad77f0201.png)
+
+2. 음식마다 주문수 확인 (인기있는 음식 확인)
+![image](https://user-images.githubusercontent.com/16378278/203236477-fca3bc57-c77b-4dac-810c-d57b1ed8a76c.png)
+![image](https://user-images.githubusercontent.com/16378278/203236506-4b7d5e23-96b9-4637-b057-61b60587ebeb.png)
+
+ 
 
 
 본 예제는 MSA/DDD/Event Storming/EDA 를 포괄하는 분석/설계/구현/운영 전단계를 커버하도록 구성한 예제입니다.
