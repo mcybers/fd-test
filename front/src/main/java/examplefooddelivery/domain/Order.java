@@ -114,7 +114,7 @@ public class Order  {
         
     }
     public static void updateStatus(Accepted accepted){
-
+        
         repository().findById(accepted.getOrderId()).ifPresent(order->{
             
             order.setStatus("주문 수락"); // do something
@@ -139,22 +139,13 @@ public class Order  {
     }
     public static void updateStatus(DeliveryFailed deliveryFailed){
 
-        /** Example 1:  new item 
-        Order order = new Order();
-        repository().save(order);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(deliveryFailed.get???()).ifPresent(order->{
+        repository().findById(deliveryFailed.getOrderId()).ifPresent(order->{
             
-            order // do something
+            order.setStatus("주문 사고"); // do something
             repository().save(order);
 
 
          });
-        */
 
         
     }
