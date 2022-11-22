@@ -44,7 +44,7 @@ public class FavoriteFoodViewHandler {
         try {
             if (!orderPlaced.validate()) return;
                 // view 객체 조회
-
+                
                 favoriteFoodRepository.findByFoodId(orderPlaced.getFoodId()).ifPresent(favoriteFood -> {
 
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
