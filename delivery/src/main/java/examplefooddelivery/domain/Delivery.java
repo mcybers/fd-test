@@ -75,6 +75,8 @@ public class Delivery  {
         delivered.publishAfterCommit();
     }
     public void accident(){
+        DeliveryFailed delivered = new DeliveryFailed(this);
+        delivered.publishAfterCommit();
     }
 
     public static void addDeliveryList(CookFinished cookFinished){
