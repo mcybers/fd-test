@@ -1,6 +1,7 @@
 ![image](https://user-images.githubusercontent.com/487999/79708354-29074a80-82fa-11ea-80df-0db3962fb453.png)
 
 # 예제 - 음식배달
+[이벤트 스토밍]
 
 ![이벤트스토밍](https://user-images.githubusercontent.com/16378278/203219614-1060fe60-263d-4fba-9f55-d2a6b88bf1ac.PNG)
 
@@ -377,9 +378,11 @@ CMD ["python", "policy-handler.py"]
 ![image](https://user-images.githubusercontent.com/16378278/203219984-0551c536-4884-48e1-8c5b-be3f3679b1b0.png)
 
 
-[Circuit Breaker]
+[Circuit Breaker & Fallback]
 
 ![image](https://user-images.githubusercontent.com/16378278/203221063-35d97281-5838-4d8e-aaab-4cc46359fccc.png)
+![image](https://user-images.githubusercontent.com/16378278/203229938-6ff7305c-1add-4877-afd8-840f0ce0bc6e.png)
+![image](https://user-images.githubusercontent.com/16378278/203230063-274afd6a-0296-40a4-9bdc-c4e5dd341d2f.png)
 
 
 
