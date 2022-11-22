@@ -95,7 +95,7 @@ public class StoreOrder  {
          });
         
     }
-    public static void alramCancel(OrderCanceled orderCanceled){
+    public static void cancelOrder(OrderCanceled orderCanceled){
 
       
         repository().findById(orderCanceled.getId()).ifPresent(storeOrder->{

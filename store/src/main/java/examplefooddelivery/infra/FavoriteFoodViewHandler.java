@@ -12,11 +12,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class TopFoodViewHandler {
+public class FavoriteFoodViewHandler {
 
 
     @Autowired
-    private TopFoodRepository topFoodRepository;
+    private FavoriteFoodRepository favoriteFoodRepository;
 
     @StreamListener(KafkaProcessor.INPUT)
     public void whenOrderPlaced_then_CREATE_1 (@Payload OrderPlaced orderPlaced) {
@@ -25,12 +25,13 @@ public class TopFoodViewHandler {
             if (!orderPlaced.validate()) return;
 
             // view 객체 생성
-            TopFood topFood = new TopFood();
+            FavoriteFood favoriteFood = new FavoriteFood();
             // view 객체에 이벤트의 Value 를 set 함
-            topFood.setFoodId(orderPlaced.getFoodId());
-            topFood.setCount(0L);
+            favoriteFood.setFoodId(orderPlaced.getFoodId());
+            favoriteFood.setCount(0L);
+
             // view 레파지 토리에 save
-            topFoodRepository.save(topFood);
+            favoriteFoodRepository.save(favoriteFood);
 
         }catch (Exception e){
             e.printStackTrace();
@@ -44,12 +45,22 @@ public class TopFoodViewHandler {
             if (!orderPlaced.validate()) return;
                 // view 객체 조회
 
+<<<<<<< HEAD:store/src/main/java/examplefooddelivery/infra/TopFoodViewHandler.java
                 topFoodRepository.findByFoodId(orderPlaced.getFoodId()).ifPresent(topFood -> {
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
                     topFood.setCount(topFood.getCount() + 1);
                     // view 레파지 토리에 save
                     topFoodRepository.save(topFood);
                 });
+=======
+                List<FavoriteFood> favoriteFoodList = favoriteFoodRepository.findByFooid(Long.valueOf(orderPlaced.getFoodId()));
+                for(FavoriteFood favoriteFood : favoriteFoodList){
+                    // view 객체에 이벤트의 eventDirectValue 를 set 함
+                    favoriteFood.setCount(favoriteFood.getCount() + 1);
+                // view 레파지 토리에 save
+                favoriteFoodRepository.save(favoriteFood);
+                }
+>>>>>>> origin/template:store/src/main/java/examplefooddelivery/infra/FavoriteFoodViewHandler.java
 
         }catch (Exception e){
             e.printStackTrace();

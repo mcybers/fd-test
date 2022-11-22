@@ -76,13 +76,13 @@
 
                     <v-list-item
                         class="px-2"
-                        key="topFoods"
-                        to="topFoods"
+                        key="favoriteFoods"
+                        to="favoriteFoods"
                         @click="changeUrl()"
                         color="deep-purple lighten-2"
                         style="font-weight:700;"
                     >
-                        TopFood
+                        FavoriteFood
                     </v-list-item>
 
                     <v-list-item
@@ -246,13 +246,13 @@
                                     class="mx-auto"
                                     outlined
                                     rounded
-                                    key="topFoods"
-                                    to="/topFoods"
+                                    key="favoriteFoods"
+                                    to="/favoriteFoods"
                                     @click="changeUrl()"
                                     color="deep-purple lighten-2"
                                     style="font-weight:500; font-size:20px; padding:15px;"
                                 >
-                                    TopFood
+                                    FavoriteFood
                                 </v-btn>
                             </v-card-actions>
                         </v-card>

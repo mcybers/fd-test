@@ -2,7 +2,7 @@
 
     <v-data-table
         :headers="headers"
-        :items="topFood"
+        :items="favoriteFood"
         :items-per-page="5"
         class="elevation-1"
     ></v-data-table>
@@ -13,7 +13,7 @@
     const axios = require('axios').default;
 
     export default {
-        name: 'TopFoodView',
+        name: 'FavoriteFoodView',
         props: {
             value: Object,
             editMode: Boolean,
@@ -25,14 +25,14 @@
                 { text: "foodId", value: "foodId" },
                 { text: "count", value: "count" },
             ],
-            topFood : [],
+            favoriteFood : [],
         }),
           async created() {
-            var temp = await axios.get(axios.fixUrl('/topFoods'))
+            var temp = await axios.get(axios.fixUrl('/favoriteFoods'))
 
-            temp.data._embedded.topFoods.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
+            temp.data._embedded.favoriteFoods.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
 
-            this.topFood = temp.data._embedded.topFoods;
+            this.favoriteFood = temp.data._embedded.favoriteFoods;
         },
         methods: {
         }
