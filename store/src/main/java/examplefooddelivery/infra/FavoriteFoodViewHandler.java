@@ -45,22 +45,12 @@ public class FavoriteFoodViewHandler {
             if (!orderPlaced.validate()) return;
                 // view 객체 조회
 
-<<<<<<< HEAD:store/src/main/java/examplefooddelivery/infra/TopFoodViewHandler.java
-                topFoodRepository.findByFoodId(orderPlaced.getFoodId()).ifPresent(topFood -> {
-                    // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    topFood.setCount(topFood.getCount() + 1);
-                    // view 레파지 토리에 save
-                    topFoodRepository.save(topFood);
-                });
-=======
-                List<FavoriteFood> favoriteFoodList = favoriteFoodRepository.findByFooid(Long.valueOf(orderPlaced.getFoodId()));
-                for(FavoriteFood favoriteFood : favoriteFoodList){
+                favoriteFoodRepository.findByFoodId(orderPlaced.getFoodId()).ifPresent(favoriteFood -> {
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
                     favoriteFood.setCount(favoriteFood.getCount() + 1);
-                // view 레파지 토리에 save
-                favoriteFoodRepository.save(favoriteFood);
-                }
->>>>>>> origin/template:store/src/main/java/examplefooddelivery/infra/FavoriteFoodViewHandler.java
+                    // view 레파지 토리에 save
+                    favoriteFoodRepository.save(favoriteFood);
+                });
 
         }catch (Exception e){
             e.printStackTrace();

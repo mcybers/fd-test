@@ -9,7 +9,7 @@ import java.util.Optional;
 @RepositoryRestResource(collectionResourceRel="favoriteFoods", path="favoriteFoods")
 public interface FavoriteFoodRepository extends PagingAndSortingRepository<FavoriteFood, Long> {
 
-    Optional<TopFood> findByFoodId(String foodId);
+    Optional<FavoriteFood> findByFoodId(String foodId);
 
 
     
