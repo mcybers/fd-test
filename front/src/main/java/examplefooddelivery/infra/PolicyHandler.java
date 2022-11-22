@@ -89,22 +89,6 @@ public class PolicyHandler{
         
 
     }
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='DeliveryFailed'")
-    public void wheneverDeliveryFailed_Cancel(@Payload DeliveryFailed deliveryFailed){
-
-        DeliveryFailed event = deliveryFailed;
-        System.out.println("\n\n##### listener Cancel : " + deliveryFailed + "\n\n");
-
-
-        
-
-        // Sample Logic //
-        Order.cancel(event);
-        
-
-        
-
-    }
 
     @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Accepted'")
     public void wheneverAccepted_UpdateStatus(@Payload Accepted accepted){
