@@ -82,9 +82,16 @@ public class Order  {
     @PreRemove
     public void onPreRemove(){
         // Get request from StoreOrder
-        //examplefooddelivery.external.StoreOrder storeOrder =
-        //    Application.applicationContext.getBean(examplefooddelivery.external.StoreOrderService.class)
-        //    .getStoreOrder(/** mapping value needed */);
+        examplefooddelivery.external.StoreOrder storeOrder = 
+            FrontApplication.applicationContext.getBean(examplefooddelivery.external.StoreOrderService.class)
+            .getStoreOrder(this.id);
+    
+        if (storeOrder.getStatus().equals("주문 완료") || storeOrder.getStatus().equals("주문 승락")) {
+            status = "고객 주문 취소";
+            repository().save(this);
+        } else {
+            throw new RuntimeException("주문 취소가 불가능");
+        }
 
     }
 
