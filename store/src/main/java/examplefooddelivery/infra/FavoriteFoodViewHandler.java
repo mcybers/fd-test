@@ -40,13 +40,12 @@ public class FavoriteFoodViewHandler {
 
 
     @StreamListener(KafkaProcessor.INPUT)
-    public void whenOrderPlaced_then_UPDATE_1(@Payload OrderPlaced orderPlaced) {
+    public void whenCookStarted_then_UPDATE_1(@Payload CookStarted cookStarted) {
         try {
-            if (!orderPlaced.validate()) return;
+            if (!cookStarted.validate()) return;
                 // view 객체 조회
                 
-                favoriteFoodRepository.findByFoodId(orderPlaced.getFoodId()).ifPresent(favoriteFood -> {
-
+                favoriteFoodRepository.findByFoodId(cookStarted.getFoodId()).ifPresent(favoriteFood -> {
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
                     favoriteFood.setCount(favoriteFood.getCount() + 1);
                     // view 레파지 토리에 save

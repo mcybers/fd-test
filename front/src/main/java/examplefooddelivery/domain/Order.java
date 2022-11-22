@@ -81,6 +81,11 @@ public class Order  {
     }
     @PreRemove
     public void onPreRemove(){
+        // Get request from StoreOrder
+        //examplefooddelivery.external.StoreOrder storeOrder =
+        //    Application.applicationContext.getBean(examplefooddelivery.external.StoreOrderService.class)
+        //    .getStoreOrder(/** mapping value needed */);
+
     }
 
     public static OrderRepository repository(){
