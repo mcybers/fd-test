@@ -46,6 +46,7 @@ public class FavoriteFoodViewHandler {
                 // view 객체 조회
 
                 favoriteFoodRepository.findByFoodId(orderPlaced.getFoodId()).ifPresent(favoriteFood -> {
+
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
                     favoriteFood.setCount(favoriteFood.getCount() + 1);
                     // view 레파지 토리에 save

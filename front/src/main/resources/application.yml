@@ -73,4 +73,8 @@ spring:
           destination: examplefooddelivery
           contentType: application/json
 
+api:
+  url:
+    front: front:8080
+
 
