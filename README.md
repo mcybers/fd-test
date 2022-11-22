@@ -1,6 +1,7 @@
 ![image](https://user-images.githubusercontent.com/487999/79708354-29074a80-82fa-11ea-80df-0db3962fb453.png)
 
 # 예제 - 음식배달
+[이벤트 스토밍]
 
 ![이벤트스토밍](https://user-images.githubusercontent.com/16378278/203219614-1060fe60-263d-4fba-9f55-d2a6b88bf1ac.PNG)
 
