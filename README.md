@@ -117,6 +117,11 @@ TIMEOUT 시간을 설정한다.
 
 ![image](https://user-images.githubusercontent.com/16378278/203221063-35d97281-5838-4d8e-aaab-4cc46359fccc.png)
 
+siege를 이용하여 Test 한 결과
+
+![image](https://user-images.githubusercontent.com/16378278/203254951-bb9a31c7-739a-4436-9ab5-411d041abdaa.png)
+
+
 TIMEOUT 시간이 지났을 경우 circuit break 관련 에러가 발생하며 차단한다.
 
 ![image](https://user-images.githubusercontent.com/16378278/203248553-027a1621-7615-4a25-bfa7-34f8f735e220.png)
