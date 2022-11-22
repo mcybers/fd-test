@@ -28,7 +28,7 @@ public class AbstractEvent {
         this.timestamp = System.currentTimeMillis();
     }
 
-    public void publish() {
+    public boolean publish() {
         /**
          * spring streams 방식
          */
@@ -37,7 +37,7 @@ public class AbstractEvent {
         );
         MessageChannel outputChannel = processor.outboundTopic();
 
-        outputChannel.send(
+        return outputChannel.send(
             MessageBuilder
                 .withPayload(this)
                 .setHeader(

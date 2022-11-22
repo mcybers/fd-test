@@ -54,20 +54,23 @@ public class Order  {
 
     @PostPersist
     public void onPostPersist(){
-
-        examplefooddelivery.external.Payment payment = new examplefooddelivery.external.Payment();
-        // mappings goes here
-        FrontApplication.applicationContext.getBean(examplefooddelivery.external.PaymentService.class)
-            .pay(payment);
+       
 
         OrderPlaced orderPlaced = new OrderPlaced(this);
-        orderPlaced.publishAfterCommit();
+        if (orderPlaced.publish()) {
+            
+            examplefooddelivery.external.Payment payment = new examplefooddelivery.external.Payment();
+            payment.setOrderId(this.id);
+            // mappings goes here
+            FrontApplication.applicationContext.getBean(examplefooddelivery.external.PaymentService.class)
+                .pay(payment);
+        }
+
 
     }
 
     @PostRemove
     public void onPostRemove(){
-
 
         OrderCanceled orderCanceled = new OrderCanceled(this);
         orderCanceled.publishAfterCommit();
