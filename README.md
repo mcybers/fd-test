@@ -113,10 +113,15 @@
 
 [Circuit Breaker]
 
-TimeOut 시간을 설정한다.
+TIMEOUT 시간을 설정한다.
 
 ![image](https://user-images.githubusercontent.com/16378278/203221063-35d97281-5838-4d8e-aaab-4cc46359fccc.png)
 
+TIMEOUT 시간이 지났을 경우 circuit break 관련 에러가 발생하며 차단한다.
+
+![image](https://user-images.githubusercontent.com/16378278/203248553-027a1621-7615-4a25-bfa7-34f8f735e220.png)
+
+![image](https://user-images.githubusercontent.com/16378278/203248731-0b59e09c-94b8-4adb-8b9b-9e0dbb2ca82a.png)
 
 
 
