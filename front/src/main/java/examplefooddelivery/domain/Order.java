@@ -84,10 +84,10 @@ public class Order  {
     }
     @PreRemove
     public void onPreRemove(){
-        // Get request from StoreOrder
-        //examplefooddelivery.external.StoreOrder storeOrder =
-        //    Application.applicationContext.getBean(examplefooddelivery.external.StoreOrderService.class)
-        //    .getStoreOrder(/** mapping value needed */);
+        // Get request from Payment
+        //examplefooddelivery.external.Payment payment =
+        //    Application.applicationContext.getBean(examplefooddelivery.external.PaymentService.class)
+        //    .getPayment(/** mapping value needed */);
 
     }
 
