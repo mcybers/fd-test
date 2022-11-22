@@ -40,20 +40,6 @@ public class Delivery  {
     @PostPersist
     public void onPostPersist(){
 
-
-        Delivered delivered = new Delivered(this);
-        delivered.publishAfterCommit();
-
-
-
-        DeliveryStarted deliveryStarted = new DeliveryStarted(this);
-        deliveryStarted.publishAfterCommit();
-
-
-
-        DeliveryFailed deliveryFailed = new DeliveryFailed(this);
-        deliveryFailed.publishAfterCommit();
-
     }
     @PrePersist
     public void onPrePersist(){
