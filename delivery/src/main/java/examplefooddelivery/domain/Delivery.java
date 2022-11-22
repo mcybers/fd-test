@@ -1,4 +1,4 @@
-package examplefooddelivery.domain;
+git package examplefooddelivery.domain;
 
 import examplefooddelivery.domain.Delivered;
 import examplefooddelivery.domain.DeliveryStarted;
