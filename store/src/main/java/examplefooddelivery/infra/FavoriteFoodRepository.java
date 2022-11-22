@@ -8,7 +8,7 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel="favoriteFoods", path="favoriteFoods")
 public interface FavoriteFoodRepository extends PagingAndSortingRepository<FavoriteFood, Long> {
 
-    List<FavoriteFood> findByFooid(Long fooid);
+    List<FavoriteFood> findByFoodId(String foodId);
 
 
     

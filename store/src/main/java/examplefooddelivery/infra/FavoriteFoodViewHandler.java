@@ -44,7 +44,7 @@ public class FavoriteFoodViewHandler {
             if (!orderPlaced.validate()) return;
                 // view 객체 조회
 
-                List<FavoriteFood> favoriteFoodList = favoriteFoodRepository.findByFooid(Long.valueOf(orderPlaced.getFoodId()));
+                List<FavoriteFood> favoriteFoodList = favoriteFoodRepository.findByFoodId(orderPlaced.getFoodId());
                 for(FavoriteFood favoriteFood : favoriteFoodList){
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
                     favoriteFood.setCount(favoriteFood.getCount() + 1);
