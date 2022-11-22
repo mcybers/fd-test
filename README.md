@@ -374,9 +374,10 @@ CMD ["python", "policy-handler.py"]
 ![image](https://user-images.githubusercontent.com/16378278/203219984-0551c536-4884-48e1-8c5b-be3f3679b1b0.png)
 
 
-[Circuit Breaker TimeOut Setting]
+[Circuit Breaker]
 
-![image](https://user-images.githubusercontent.com/16378278/203220847-7938be15-538f-4c9e-94d2-73437cf7ba74.png)
+![image](https://user-images.githubusercontent.com/16378278/203221063-35d97281-5838-4d8e-aaab-4cc46359fccc.png)
+
 
 
 
