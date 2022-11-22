@@ -55,6 +55,7 @@
 1. 고객이 주문상태를 중간중간 조회한다
 1. 주문상태가 바뀔 때 마다 카톡으로 알림을 보낸다
 
+
 비기능적 요구사항
 1. 트랜잭션
     1. 결제가 되지 않은 주문건은 아예 거래가 성립되지 않아야 한다  Sync 호출 
@@ -71,6 +72,10 @@
 ![image](https://user-images.githubusercontent.com/16378278/203234918-0c5d4411-e52c-49cf-9f77-7e6586f126ea.png)
 [음식 주문 개수 확인]
 ![image](https://user-images.githubusercontent.com/16378278/203235591-9dc332ed-79d2-4e65-a6dc-7f71d0b9672a.png)
+
+
+[주문 취소시 결제 삭제]
+![image](https://user-images.githubusercontent.com/16378278/203236917-3ec5c11c-284a-49ed-aa1e-9a66f8a41fb2.png)
 
 
 # 체크포인트
