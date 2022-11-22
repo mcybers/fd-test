@@ -12,4 +12,11 @@ public class CookStarted extends AbstractEvent {
     private Long orderId;
     private String status;
     private String address;
+
+    public CookStarted(StoreOrder aggregate){
+        super(aggregate);
+    }
+    public CookStarted(){
+        super();
+    }
 }
