@@ -79,7 +79,13 @@
 
 [Compensation / Correlation]
 
+고객이 주문을 취소했을 때 주문 취소가 가능한 경우 주문상태를 변경, 불가능한 경우 오류를 출력한다.
+
 ![image](https://user-images.githubusercontent.com/16378278/203238149-d36c67de-fcab-4b2f-95dc-e8271b2207df.png)
+
+
+점주가 주문을 거절했을 때 주문을 거절 상태로 변경한다. 
+
 ![image](https://user-images.githubusercontent.com/16378278/203236917-3ec5c11c-284a-49ed-aa1e-9a66f8a41fb2.png)
 
 
@@ -87,18 +93,27 @@
     - API GW를 통하여 마이크로 서비스들의 집입점을 통일할 수 있는가?
     - 게이트웨이와 인증서버(OAuth), JWT 토큰 인증을 통하여 마이크로서비스들을 보호할 수 있는가?
 
+게이트 웨이 설정을 보여준다.
+
 ![image](https://user-images.githubusercontent.com/16378278/203221326-7ffc559c-552c-413e-a1f6-208d6a93c872.png)
 
 
 
 ## 동기식 호출 과 Fallback 처리
 
+주문 시작 시 결제를 동기화하여 바로 결제로 이어질 수 있도록 동기 호출한다.
+
 ![image](https://user-images.githubusercontent.com/16378278/203220623-0cfa23cb-ac21-4e4c-af18-158d2778807d.png)
+
+
+주문 취소 시 현재 주문의 상태를 확인하기 위해 취소 전 Store의 상태를 가져온다.
 
 ![image](https://user-images.githubusercontent.com/16378278/203219984-0551c536-4884-48e1-8c5b-be3f3679b1b0.png)
 
 
 [Circuit Breaker]
+
+TimeOut 시간을 설정한다.
 
 ![image](https://user-images.githubusercontent.com/16378278/203221063-35d97281-5838-4d8e-aaab-4cc46359fccc.png)
 
@@ -110,8 +125,12 @@
 
 ## 비동기식 호출 / 시간적 디커플링 / 장애격리 / 최종 (Eventual) 일관성 테스트
 
+주문 거절 및 승락에 대한 비동기식 호출 코드이다. 실제 내부 동작은 아래 사진으로 동작한다.
 
 ![image](https://user-images.githubusercontent.com/16378278/203220353-e5dba4ac-0a96-44b0-9255-5c244d9c1a85.png)
+
+주문 승락 또는 거절에 대해 현재 상태를 변경하고 저장한다.
+
 ![image](https://user-images.githubusercontent.com/16378278/203220472-e7c86bde-147b-4ae8-a6db-4b36d7df5958.png)
 
 
