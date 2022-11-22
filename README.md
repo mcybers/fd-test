@@ -102,6 +102,9 @@
   - API 게이트웨이
     - API GW를 통하여 마이크로 서비스들의 집입점을 통일할 수 있는가?
     - 게이트웨이와 인증서버(OAuth), JWT 토큰 인증을 통하여 마이크로서비스들을 보호할 수 있는가?
+
+![image](https://user-images.githubusercontent.com/16378278/203221326-7ffc559c-552c-413e-a1f6-208d6a93c872.png)
+
 - 운영
   - SLA 준수
     - 셀프힐링: Liveness Probe 를 통하여 어떠한 서비스의 health 상태가 지속적으로 저하됨에 따라 어떠한 임계치에서 pod 가 재생되는 것을 증명할 수 있는가?
