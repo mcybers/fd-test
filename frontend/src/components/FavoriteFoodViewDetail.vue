@@ -2,7 +2,7 @@
 
     <v-card outlined>
         <v-card-title>
-            TopFood # {{$route.params.id }}
+            FavoriteFood # {{$route.params.id }}
         </v-card-title>
 
         <v-card-text>
@@ -21,7 +21,7 @@
   const axios = require('axios').default;
 
   export default {
-    name: 'TopFoodViewDetail',
+    name: 'FavoriteFoodViewDetail',
     props: {
       value: Object,
     },
@@ -30,7 +30,7 @@
     }),
     async created() {
       var params = this.$route.params;
-      var temp = await axios.get(axios.fixUrl('/topFoods/' + params.id))
+      var temp = await axios.get(axios.fixUrl('/favoriteFoods/' + params.id))
 
       this.item = temp.data;
 

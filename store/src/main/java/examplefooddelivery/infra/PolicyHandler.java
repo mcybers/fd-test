@@ -41,16 +41,16 @@ public class PolicyHandler{
     }
 
     @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='OrderCanceled'")
-    public void wheneverOrderCanceled_AlramCancel(@Payload OrderCanceled orderCanceled){
+    public void wheneverOrderCanceled_CancelOrder(@Payload OrderCanceled orderCanceled){
 
         OrderCanceled event = orderCanceled;
-        System.out.println("\n\n##### listener AlramCancel : " + orderCanceled + "\n\n");
+        System.out.println("\n\n##### listener CancelOrder : " + orderCanceled + "\n\n");
 
 
         
 
         // Sample Logic //
-        StoreOrder.alramCancel(event);
+        StoreOrder.cancelOrder(event);
         
 
         

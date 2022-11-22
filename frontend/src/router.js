@@ -13,8 +13,8 @@ import PaymentDetail from "./components/listers/PaymentDetail"
 import StoreOrderManager from "./components/listers/StoreOrderCards"
 import StoreOrderDetail from "./components/listers/StoreOrderDetail"
 
-import TopFoodView from "./components/TopFoodView"
-import TopFoodViewDetail from "./components/TopFoodViewDetail"
+import FavoriteFoodView from "./components/FavoriteFoodView"
+import FavoriteFoodViewDetail from "./components/FavoriteFoodViewDetail"
 import DeliveryManager from "./components/listers/DeliveryCards"
 import DeliveryDetail from "./components/listers/DeliveryDetail"
 
@@ -59,14 +59,14 @@ export default new Router({
             },
 
             {
-                path: '/topFoods',
-                name: 'TopFoodView',
-                component: TopFoodView
+                path: '/favoriteFoods',
+                name: 'FavoriteFoodView',
+                component: FavoriteFoodView
             },
             {
-                path: '/topFoods/:id',
-                name: 'TopFoodViewDetail',
-                component: TopFoodViewDetail
+                path: '/favoriteFoods/:id',
+                name: 'FavoriteFoodViewDetail',
+                component: FavoriteFoodViewDetail
             },
             {
                 path: '/deliveries',

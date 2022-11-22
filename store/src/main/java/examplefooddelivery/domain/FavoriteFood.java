@@ -6,9 +6,9 @@ import java.util.Date;
 import lombok.Data;
 
 @Entity
-@Table(name="TopFood_table")
+@Table(name="FavoriteFood_table")
 @Data
-public class TopFood {
+public class FavoriteFood {
 
         @Id
         //@GeneratedValue(strategy=GenerationType.AUTO)
