@@ -70,6 +70,8 @@ public class Delivery  {
     }
     public void confirmDelivered(){
     }
+    public void accident(){
+    }
 
     public static void addDeliveryList(CookFinished cookFinished){
 
