@@ -84,6 +84,5 @@ spring:
 api:
   url:
     front: front:8080
-    store: store:8080
 
 
