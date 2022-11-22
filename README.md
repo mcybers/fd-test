@@ -368,6 +368,9 @@ CMD ["python", "policy-handler.py"]
 
 
 ## 동기식 호출 과 Fallback 처리
+
+![image](https://user-images.githubusercontent.com/16378278/203220623-0cfa23cb-ac21-4e4c-af18-158d2778807d.png)
+
 ![image](https://user-images.githubusercontent.com/16378278/203219984-0551c536-4884-48e1-8c5b-be3f3679b1b0.png)
 
 
