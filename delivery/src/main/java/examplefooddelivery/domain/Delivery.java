@@ -2,6 +2,7 @@ package examplefooddelivery.domain;
 
 import examplefooddelivery.domain.Delivered;
 import examplefooddelivery.domain.DeliveryStarted;
+import examplefooddelivery.domain.DeliveryFailed;
 import examplefooddelivery.DeliveryApplication;
 import javax.persistence.*;
 import java.util.List;
@@ -47,6 +48,11 @@ public class Delivery  {
 
         DeliveryStarted deliveryStarted = new DeliveryStarted(this);
         deliveryStarted.publishAfterCommit();
+
+
+
+        DeliveryFailed deliveryFailed = new DeliveryFailed(this);
+        deliveryFailed.publishAfterCommit();
 
     }
     @PrePersist

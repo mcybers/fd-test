@@ -113,6 +113,27 @@ public class Order  {
          });
         
     }
+    public static void cancel(DeliveryFailed deliveryFailed){
+
+        /** Example 1:  new item 
+        Order order = new Order();
+        repository().save(order);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(deliveryFailed.get???()).ifPresent(order->{
+            
+            order // do something
+            repository().save(order);
+
+
+         });
+        */
+
+        
+    }
     public static void updateStatus(Accepted accepted){
 
         repository().findById(accepted.getOrderId()).ifPresent(order->{
@@ -134,6 +155,27 @@ public class Order  {
 
 
          });
+
+        
+    }
+    public static void updateStatus(DeliveryFailed deliveryFailed){
+
+        /** Example 1:  new item 
+        Order order = new Order();
+        repository().save(order);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(deliveryFailed.get???()).ifPresent(order->{
+            
+            order // do something
+            repository().save(order);
+
+
+         });
+        */
 
         
     }

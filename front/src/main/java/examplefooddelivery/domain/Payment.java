@@ -63,6 +63,27 @@ public class Payment  {
 
         
     }
+    public static void cancelPayment(DeliveryFailed deliveryFailed){
+
+        /** Example 1:  new item 
+        Payment payment = new Payment();
+        repository().save(payment);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(deliveryFailed.get???()).ifPresent(payment->{
+            
+            payment // do something
+            repository().save(payment);
+
+
+         });
+        */
+
+        
+    }
 
 
 }
