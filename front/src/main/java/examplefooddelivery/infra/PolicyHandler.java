@@ -56,12 +56,44 @@ public class PolicyHandler{
         
 
     }
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='DeliveryFailed'")
+    public void wheneverDeliveryFailed_CancelPayment(@Payload DeliveryFailed deliveryFailed){
+
+        DeliveryFailed event = deliveryFailed;
+        System.out.println("\n\n##### listener CancelPayment : " + deliveryFailed + "\n\n");
+
+
+        
+
+        // Sample Logic //
+        Payment.cancelPayment(event);
+        
+
+        
+
+    }
 
     @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Rejected'")
     public void wheneverRejected_Cancel(@Payload Rejected rejected){
 
         Rejected event = rejected;
         System.out.println("\n\n##### listener Cancel : " + rejected + "\n\n");
+
+
+        
+
+        // Sample Logic //
+        Order.cancel(event);
+        
+
+        
+
+    }
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='DeliveryFailed'")
+    public void wheneverDeliveryFailed_Cancel(@Payload DeliveryFailed deliveryFailed){
+
+        DeliveryFailed event = deliveryFailed;
+        System.out.println("\n\n##### listener Cancel : " + deliveryFailed + "\n\n");
 
 
         
@@ -95,6 +127,22 @@ public class PolicyHandler{
 
         Rejected event = rejected;
         System.out.println("\n\n##### listener UpdateStatus : " + rejected + "\n\n");
+
+
+        
+
+        // Sample Logic //
+        Order.updateStatus(event);
+        
+
+        
+
+    }
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='DeliveryFailed'")
+    public void wheneverDeliveryFailed_UpdateStatus(@Payload DeliveryFailed deliveryFailed){
+
+        DeliveryFailed event = deliveryFailed;
+        System.out.println("\n\n##### listener UpdateStatus : " + deliveryFailed + "\n\n");
 
 
         

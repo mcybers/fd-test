@@ -148,6 +148,20 @@ public class PolicyHandler{
         
 
     }
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='DeliveryFailed'")
+    public void wheneverDeliveryFailed_SendKakaotalk(@Payload DeliveryFailed deliveryFailed){
+
+        DeliveryFailed event = deliveryFailed;
+        System.out.println("\n\n##### listener SendKakaotalk : " + deliveryFailed + "\n\n");
+
+
+        
+
+        // Sample Logic //
+
+        
+
+    }
 
 }
 
