@@ -9,9 +9,10 @@ public class PaymentServiceImpl implements PaymentService {
     /**
      * Fallback
      */
-    public Payment getPayment(Long id) {
-        Payment payment = new Payment();
-        return payment;
+    @Override
+    public void pay(Payment payment) {
+        // TODO Auto-generated method stub
+                
     }
 }
 

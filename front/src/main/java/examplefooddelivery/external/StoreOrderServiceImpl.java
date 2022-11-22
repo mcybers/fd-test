@@ -11,6 +11,9 @@ public class StoreOrderServiceImpl implements StoreOrderService {
      */
     public StoreOrder getStoreOrder(Long id) {
         StoreOrder storeOrder = new StoreOrder();
+        storeOrder.setOrderId(id);
+        storeOrder.setFoodId("확인중");
+        storeOrder.setStatus("대기");
         return storeOrder;
     }
 }
