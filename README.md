@@ -8,10 +8,12 @@
 
 [새로운 기능]
 1. 사고 시 주문 취소
+라이더가 배달 도중 음식이 훼손된 경우 주문을 취소하는 과정
 ![image](https://user-images.githubusercontent.com/16378278/203236196-a879274d-e011-4fc3-867e-44efffacd210.png)
 ![image](https://user-images.githubusercontent.com/16378278/203236234-e3100a21-e1f3-4bfb-a53f-081ad77f0201.png)
 
 2. 음식마다 주문수 확인 (인기있는 음식 확인)
+주문을 시작하고 요리가 시작되었을때(취소할 수 없는 상태) 주문된 요리의 갯수를 올림
 ![image](https://user-images.githubusercontent.com/16378278/203236477-fca3bc57-c77b-4dac-810c-d57b1ed8a76c.png)
 ![image](https://user-images.githubusercontent.com/16378278/203236506-4b7d5e23-96b9-4637-b057-61b60587ebeb.png)
 
@@ -68,12 +70,15 @@
 
 [CQRS]
 [주문 상태 확인]
+고객 또는 점주는 현재 주문의 상태를 지속적으로 확인 할 수 있다.
 ![image](https://user-images.githubusercontent.com/16378278/203234918-0c5d4411-e52c-49cf-9f77-7e6586f126ea.png)
 [음식 주문 개수 확인]
+주문된 음식의 총 개수를 확인 할 수 있다.
 ![image](https://user-images.githubusercontent.com/16378278/203235591-9dc332ed-79d2-4e65-a6dc-7f71d0b9672a.png)
 
 
 [Compensation / Correlation]
+
 ![image](https://user-images.githubusercontent.com/16378278/203238149-d36c67de-fcab-4b2f-95dc-e8271b2207df.png)
 ![image](https://user-images.githubusercontent.com/16378278/203236917-3ec5c11c-284a-49ed-aa1e-9a66f8a41fb2.png)
 
