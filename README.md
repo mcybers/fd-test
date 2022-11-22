@@ -115,7 +115,8 @@
 
 TIMEOUT 시간을 설정한다.
 
-![image](https://user-images.githubusercontent.com/16378278/203221063-35d97281-5838-4d8e-aaab-4cc46359fccc.png)
+![image](https://user-images.githubusercontent.com/16378278/203255208-98ab213f-4e76-4d5c-a483-1ffe7f269d12.png)
+
 
 siege를 이용하여 Test 한 결과
 
