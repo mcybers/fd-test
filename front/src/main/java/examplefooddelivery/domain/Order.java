@@ -119,11 +119,7 @@ public class Order  {
             
             order.setStatus("주문 수락"); // do something
             repository().save(order);
-
-
-         });
-
-        
+         });        
     }
     public static void updateStatus(Rejected rejected){
 

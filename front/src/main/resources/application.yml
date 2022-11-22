@@ -48,7 +48,6 @@ logging:
 
 api:
   url:
-
     front: localhost:8081
     store: localhost:8082
 

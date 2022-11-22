@@ -78,16 +78,9 @@ public class PolicyHandler{
 
         Rejected event = rejected;
         System.out.println("\n\n##### listener Cancel : " + rejected + "\n\n");
-
-
         
-
         // Sample Logic //
         Order.cancel(event);
-        
-
-        
-
     }
 
     @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Accepted'")
@@ -96,14 +89,8 @@ public class PolicyHandler{
         Accepted event = accepted;
         System.out.println("\n\n##### listener UpdateStatus : " + accepted + "\n\n");
 
-
-        
-
         // Sample Logic //
         Order.updateStatus(event);
-        
-
-        
 
     }
     @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Rejected'")
