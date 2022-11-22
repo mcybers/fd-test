@@ -1,11 +1,9 @@
-package examplefooddelivery.domain;
+package examplefooddelivery.external;
 
-import examplefooddelivery.infra.AbstractEvent;
 import lombok.Data;
-import java.util.*;
-
+import java.util.Date;
 @Data
-public class CookStarted extends AbstractEvent {
+public class StoreOrder {
 
     private Long id;
     private String foodId;
@@ -13,3 +11,5 @@ public class CookStarted extends AbstractEvent {
     private String status;
     private String address;
 }
+
+
